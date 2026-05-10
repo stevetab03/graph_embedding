@@ -60,14 +60,14 @@ Output name [default: same as database]: YourOutputName
 
 ```
 output/
-├── {OutputName}.pbip                        ← open this in Power BI Desktop
+├── {OutputName}.pbip             open this in Power BI Desktop
 ├── {OutputName}.SemanticModel/
-│   ├── model.bim                            ← tables, columns, relationships (TMDL JSON)
-│   ├── definition.pbism                     ← semantic model definition pointer
-│   ├── .platform                            ← Fabric platform metadata
-│   └── diagramLayout.json                   ← relationship diagram layout
+│   ├── model.bim                 tables, columns, relationships (TMDL JSON)
+│   ├── definition.pbism          semantic model definition pointer
+│   ├── .platform                 Fabric platform metadata
+│   └── diagramLayout.json        relationship diagram layout
 └── {OutputName}.Report/
-    └── definition.pbir                      ← report definition pointing to semantic model
+    └── definition.pbir           report definition pointing to semantic model
 ```
 
 ---
