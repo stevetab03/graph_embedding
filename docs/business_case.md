@@ -11,17 +11,15 @@ Liyuan (Steve) Zhang ▪ github.com/stevetab03/graph_embedding\
 
 > *GraphEmbed_PBI addresses a structural inefficiency present in every Power BI implementation: the manual reconstruction of a dimensional model that already exists in the data warehouse. By modeling the data warehouse schema as a directed graph and applying an injective graph homomorphism to the Power BI semantic layer, the tool eliminates redundant development effort, enforces data governance through a single source of truth, and generates a deployment-ready semantic model instantly. The proof-of-concept is validated on SQL Server. The extraction layer is architected for portability across any ANSI-compliant relational database.*
 
-**THE PROBLEM
-
-**Every time a BI developer starts a new Power BI project, he spends days doing work that should take minutes. The data is already in the data warehouse with all relationships defined and documented. But Power BI has no way to fetch that structure automatically. So the developer rebuilds it manually: importing every table, drawing every relationship, making sure nothing is connected wrong.
+**THE PROBLEM**  
+Every time a BI developer starts a new Power BI project, he spends days doing work that should take minutes. The data is already in the data warehouse with all relationships defined and documented. But Power BI has no way to fetch that structure automatically. So the developer rebuilds it manually: importing every table, drawing every relationship, making sure nothing is connected wrong.
 
 This happens on every project, at every company, with every BI tool. It is repetitive, error-prone, and adds no analytical value. Worse, when the data warehouse changes, the Power BI model does not update automatically, thereby creating a growing gap between the actual data and what reports show. This is a data governance failure hiding in plain sight.
 
 The typical cost is 2--5 days of skilled developer time per project, repeated every time a new report or data mart is built --- and ongoing maintenance cost every time the underlying data model changes.\
-\
-**THE SOLUTION\
-\
-**GraphEmbed_PBI is an open-source Python program that reads the data structure directly from any relational database and automatically generates a ready-to-use Power BI project file (.pbip) that contains tables, columns, and relationships already wired together correctly.
+
+**THE SOLUTION**  
+GraphEmbed_PBI is an open-source Python program that reads the data structure directly from any relational database and automatically generates a ready-to-use Power BI project file (.pbip) that contains tables, columns, and relationships already wired together correctly.
 
 The developer runs one command, answers three prompts (server, database, output name), and receives a .pbip file they can open immediately. No manual table import. No relationship drawing. No guesswork. The semantic layer is built from the single source of truth --- the data warehouse itself.
 
