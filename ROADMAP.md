@@ -14,7 +14,6 @@
 ## v0.3 — BI Platform Adapter Layer
 - Tableau (.tds output translator)
 - Alteryx (workflow scaffold output)
-- Looker (LookML view generation)
 
 ## v0.4 — Infrastructure
 - Microsoft Fabric direct publishing via REST API
