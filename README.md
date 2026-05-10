@@ -122,23 +122,23 @@ Full POC DDL and instructions: [`examples/poc_star_schema/`](examples/poc_star_s
 
 ```
 graph_embedding/
-├── README.md                          ← this file
-├── LICENSE                            ← MIT
-├── ROADMAP.md                         ← development roadmap
+├── README.md
+├── LICENSE
+├── ROADMAP.md                   development roadmap
 │
 ├── GraphEmbed_PBI/
-│   ├── graphembed_pbi.py              ← main script (SQL Server → Power BI PBIP)
-│   ├── requirements.txt               ← pyodbc
-│   └── README.md                      ← PBI-specific usage and configuration
+│   ├── graphembed_pbi.py        main script maps SQL Server to Power BI
+│   ├── requirements.txt
+│   └── README.md
 │
 ├── docs/
-│   ├── technical_paper.md             ← graph embedding framework — technical depth
-│   └── business_case.md               ← non-technical whitepaper — productivity and governance
+│   ├── technical_paper.md       graph embedding framework — technical depth
+│   └── business_case.md         non-technical whitepaper — productivity and governance
 │
 └── examples/
     └── poc_star_schema/
-        ├── create_schema.sql          ← DDL to recreate the POC star schema
-        └── README.md                  ← step-by-step POC walkthrough
+        ├── create_schema.sql    DDL to recreate the POC star schema
+        └── README.md            step-by-step POC walkthrough
 ```
 
 ---
