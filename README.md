@@ -6,8 +6,8 @@
 [![Target: Power BI PBIP](https://img.shields.io/badge/Target-Power_BI_PBIP-F2C811?logo=powerbi&logoColor=black)](https://github.com/stevetab03/graph_embedding)
 [![Status: Active Development](https://img.shields.io/badge/Status-Active_Development-orange)](https://github.com/stevetab03/graph_embedding)
 
-**Author:** Liyuan (Steve) Zhang  
-**Status:** Active Development — v0.1 Power BI (SQL Server) · Roadmap: PostgreSQL · Snowflake · Oracle · Tableau
+**Author:** Liyuan Zhang  
+**Status:** Active Research & Development — v0.1 Power BI (SQL Server) · Roadmap: PostgreSQL · Snowflake · Oracle · Tableau
 
 *Source code is provided as-is for portfolio and research purposes. The architectural framework, graph embedding formulation, and BFS relationship classification algorithm represent original applied work by the author.*
 
