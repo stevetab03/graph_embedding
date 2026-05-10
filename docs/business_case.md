@@ -11,6 +11,7 @@ Liyuan (Steve) Zhang ▪ github.com/stevetab03/graph_embedding\
 
 > *GraphEmbed_PBI addresses a structural inefficiency present in every Power BI implementation: the manual reconstruction of a dimensional model that already exists in the data warehouse. By modeling the data warehouse schema as a directed graph and applying an injective graph homomorphism to the Power BI semantic layer, the tool eliminates redundant development effort, enforces data governance through a single source of truth, and generates a deployment-ready semantic model instantly. The proof-of-concept is validated on SQL Server. The extraction layer is architected for portability across any ANSI-compliant relational database.*
 
+
 **THE PROBLEM**  
 Every time a BI developer starts a new Power BI project, he spends days doing work that should take minutes. The data is already in the data warehouse with all relationships defined and documented. But Power BI has no way to fetch that structure automatically. So the developer rebuilds it manually: importing every table, drawing every relationship, making sure nothing is connected wrong.
 
@@ -35,8 +36,7 @@ What GraphEmbed_PBI delivers:
 
 -   **Future-ready ---** A next step is publishing to Microsoft Fabric workspaces, making the bootstrapped model immediately available to the entire organization without manual file handling.
 
-**HOW IT WORKS\
-**\
+**HOW IT WORKS**  
 Every relational database, e.g., SQL Server, PostgreSQL, Snowflake, Oracle, Redshift, stores its metadata in a standard location. Table names, column names, data types, and the relationships between tables are all readable by any tool that knows where to look.
 
 GraphEmbed_PBI fetches that metadata, translates it into the format Power BI understands, and writes the result to disk as a valid Power BI project. When the developer opens it, the data model is already built.
