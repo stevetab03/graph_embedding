@@ -1,4 +1,4 @@
-# graph_embedding: Graph Embedding for BI Semantic Layer Generation
+# graph_embedding: Graph Embedding for BI Semantic Model Generation
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Methods: ANSI Schema · BFS · Injective Homomorphism](https://img.shields.io/badge/Methods-ANSI_Schema_%7C_BFS_%7C_Injective_Homomorphism-blueviolet)](https://github.com/stevetab03/graph_embedding)
