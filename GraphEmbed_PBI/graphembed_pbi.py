@@ -1,3 +1,46 @@
+"""
+Graph Embedding for Power BI Semantic Layer Generation
+GraphEmbed_PBI — SQL Server Adapter
+Created by Liyuan (Steve) Zhang
+========================================
+Computes an injective graph homomorphism from the warehouse foreign key
+graph to the Power BI semantic model graph, generating a deployment-ready
+PBIP folder with all relationships pre-wired and classified as active or
+inactive via BFS reachability.
+
+The active relationship subgraph is constrained to a spanning forest —
+acyclic, with at most one active path between any two tables — enforcing
+Power BI's relationship constraint while preserving maximum structural
+fidelity to the source schema.
+
+Input:
+  - SQL Server database (any schema, any version)
+  - ANSI INFORMATION_SCHEMA for tables and columns
+  - sys.foreign_keys for relationship extraction (SQL Server-specific)
+
+Output:
+  - {Output}.pbip                            project pointer (open this)
+  - {Output}.SemanticModel/model.bim         TMDL semantic model definition
+  - {Output}.SemanticModel/definition.pbism  semantic model manifest
+  - {Output}.SemanticModel/.platform         Fabric platform metadata
+  - {Output}.SemanticModel/diagramLayout.json relationship diagram layout
+  - {Output}.Report/definition.pbir          report definition
+
+Usage:
+  python graphembed_pbi.py
+
+Prompts:
+  Server   [default: localhost]
+  Database (data model name)
+  Schema   [default: dbo]
+  Output name [default: same as database]
+
+Roadmap:
+  v0.2 — PostgreSQL, Snowflake, Oracle, Redshift adapters
+  v0.3 — Tableau .tds output translator, Alteryx scaffold output
+  v0.4 — Microsoft Fabric direct publishing, UI layer
+"""
+
 import pyodbc, json, os
 from collections import defaultdict, deque
 
