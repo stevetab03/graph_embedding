@@ -102,6 +102,6 @@ For a production warehouse with 30+ tables and 40+ relationships (AdventureWorks
 
 ```
 examples/poc_star_schema/
-├── create_schema.sql          ← DDL: schema, tables, foreign keys
-└── README.md                  ← this file
+├── create_schema.sql
+└── README.md
 ```
