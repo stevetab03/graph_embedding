@@ -239,5 +239,5 @@ This tool produces governed separation by default.
 ```
 examples/poc_star_schema/
 ├── create_schema.sql          DDL — both logical models + conformed dimension
-└── README.md                  this file
+└── README.md
 ```
