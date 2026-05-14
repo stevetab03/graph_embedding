@@ -146,8 +146,8 @@ graph_embedding/
 │
 └── examples/
 └── poc_star_schema/
-├── create_schema.sql      DDL — Internet Sales (star) + Reseller Sales (snowflake)
-└── README.md              step-by-step POC walkthrough
+├── create_schema.sql              DDL — Internet Sales (star) + Reseller Sales (snowflake)
+└── README.md                      step-by-step POC walkthrough
 ```
 ---
 
