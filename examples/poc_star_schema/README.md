@@ -1,6 +1,3 @@
-Current README only covers the v0.1 star schema. It needs a full rewrite to reflect the v0.2 two-model POC — star + snowflake, conformed dimension, multi-model output. Here is the complete replacement:
-markdown# POC: Multi-Model Schema Walkthrough
-
 A complete end-to-end example of `GraphEmbed_PBI v0.2` validating the full
 graph embedding framework — connected component detection, conformed dimension
 handling, and multi-model PBIP output — against two logical models in a single
