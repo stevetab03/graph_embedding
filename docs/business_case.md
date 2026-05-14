@@ -2,7 +2,7 @@
 
 > *Productivity, Data Governance, and Schema-Scale Automation*
 
-**Liyuan (Steve) Zhang**  
+**Liyuan Zhang**  
 github.com/stevetab03/graph_embedding
 
 ---
