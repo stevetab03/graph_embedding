@@ -1,6 +1,3 @@
-Current ROADMAP has two problems: v0.2 is listed as database adapters but it's actually complete as multi-model detection, and the versions need reordering to reflect what's actually been built. Here's the revised version:
-markdown# ROADMAP
-
 `graph_embedding` is built around a clean architectural separation between the
 extraction layer (reading warehouse metadata) and the output translation layer
 (generating BI tool artifacts). Each version either deepens the extraction
