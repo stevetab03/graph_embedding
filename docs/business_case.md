@@ -159,10 +159,10 @@ requires a specific combination of skills that is genuinely rare.
 
 **Technical foundation:**
 
-- Dual BS in Applied Mathematics and Nuclear Engineering from Purdue University
-- MS in Mathematical and Computational Finance from NJIT
+- Dual BS in Applied Mathematics and Nuclear Engineering
+- MS in Mathematical and Computational Finance
 - Currently completing a second MS in Mathematics (Measure Theory, Applied
-  Analysis, Advanced Calculus) at Emporia State University
+  Analysis, Graph Theory, Topology) at Emporia State University
 - Independent quantitative research: production stochastic models in yield
   curve analytics and options microstructure, surfaced in live Power BI
   dashboards backed by real market data
