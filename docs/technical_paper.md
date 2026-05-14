@@ -2,7 +2,7 @@
 
 > *An Application of Injective Graph Homomorphism to Data-Warehouse-to-Semantic-Layer Translation*
 
-**Liyuan (Steve) Zhang**  
+**Liyuan Zhang**  
 github.com/stevetab03/graph_embedding
 
 ---
