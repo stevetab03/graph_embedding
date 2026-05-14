@@ -6,7 +6,7 @@
 [![Target: Power BI · Microsoft Fabric](https://img.shields.io/badge/Target-Power_BI_%7C_Microsoft_Fabric-F2C811?logo=powerbi&logoColor=black)](https://github.com/stevetab03/graph_embedding)
 [![Status: Active Development](https://img.shields.io/badge/Status-Active_Development-orange)](https://github.com/stevetab03/graph_embedding)
 
-**Author:** Liyuan (Steve) Zhang  
+**Author:** Liyuan Zhang  
 **Status:** Active Research & Development — v0.2 Multi-Model · SQL Server → Power BI PBIP · Roadmap: Fabric Publishing · Additional Databases · Tableau · Alteryx
 
 *Source code is provided as-is for portfolio and research purposes. The architectural framework, graph embedding formulation, BFS relationship classification, and connected component logical model detection represent original applied work by the author.*
