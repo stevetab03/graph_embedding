@@ -128,7 +128,7 @@ Validated against a two-model schema in SQL Server under a dedicated `poc` schem
 Full POC DDL and instructions: [`examples/poc_star_schema/`](examples/poc_star_schema/)
 
 ---
-
+```
 ## Repository Structure
 graph_embedding/
 ├── README.md
@@ -148,7 +148,7 @@ graph_embedding/
 └── poc_star_schema/
 ├── create_schema.sql      DDL — Internet Sales (star) + Reseller Sales (snowflake)
 └── README.md              step-by-step POC walkthrough
-
+```
 ---
 
 ## Status
