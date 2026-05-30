@@ -6,7 +6,7 @@
 [![Target: Power BI · Microsoft Fabric](https://img.shields.io/badge/Target-Power_BI_%7C_Microsoft_Fabric-F2C811?logo=powerbi&logoColor=black)](https://github.com/stevetab03/graph_embedding)
 [![Status: Active Development](https://img.shields.io/badge/Status-Active_Development-orange)](https://github.com/stevetab03/graph_embedding)
 
-**Author:** Liyuan Zhang  
+**Author:** Liyuan (Steve) Zhang  
 **Status:** Active Research & Development — v0.2 Multi-Model · SQL Server → Power BI PBIP · Roadmap: Fabric Publishing · Additional Databases · Tableau · Alteryx
 
 *Source code is provided as-is for portfolio and research purposes. The architectural framework, graph embedding formulation, BFS relationship classification, and connected component logical model detection represent original applied work by the author.*
@@ -56,18 +56,24 @@ The foreign key graph G = (V, E) is constructed where:
 Power BI enforces a constraint that no two active relationships may create multiple paths between any pair of tables. Formally, the active relationship subgraph must be a **spanning forest** — acyclic, with at most one active path between any two vertices.
 
 Before each edge is classified as active, a Breadth-First Search reachability check determines whether the two vertices are already connected in the active subgraph:
+
+```
 for each foreign key (u, v):
-if BFS(active_graph, u) reaches v → mark INACTIVE
-else → mark ACTIVE, add edge to active_graph
+    if BFS(active_graph, u) reaches v  →  mark INACTIVE
+    else                               →  mark ACTIVE, add edge to active_graph
+```
 
 This incrementally constructs the maximal spanning forest of the foreign key graph. Self-referencing edges (parent-child hierarchies) and composite FK duplicates are excluded. The result is the largest valid active relationship subgraph Power BI's constraint system permits.
 
 ### Layer 3 — Connected Component Detection
 
 Real warehouse schemas contain multiple disconnected subject areas. After relationship classification, a second BFS pass — executed on the active graph with conformed dimensions temporarily removed — identifies the connected components of the schema graph. Each component is a logical model boundary.
+
+```
 for each non-conformed table not yet visited:
-BFS(active_graph, table, exclude=conformed_dims)
-→ component = all reachable tables
+    BFS(active_graph, table, exclude=conformed_dims)
+    → component = all reachable tables
+```
 
 Conformed dimensions (e.g. DimDate shared across subject areas) are added back into every component after detection. The result is N logically isolated table sets, each representing one complete dimensional model.
 
@@ -98,16 +104,21 @@ cd GraphEmbed_PBI
 pip install -r requirements.txt
 python graphembed_pbi.py
 ```
+
+```
 === GraphEmbed_PBI v0.2 ===
 Server   [default: localhost]:
 Database (data model name)  : AdventureWorksDW2022
 Schema   [default: dbo]: poc
 Output name [default: same as database]: poc
+
 Tables in schema: DimCategory, DimCustomer, DimDate, DimEmployee...
 Conformed dimensions (comma-separated, or Enter to skip): DimDate
+
 Logical models detected: 2
-Model 1 [FactInternetSales]: DimCustomer, DimDate, DimProduct, DimTerritory, FactInternetSales
-Model 2 [FactResellerSales]: DimCategory, DimDate, DimEmployee, DimProductDetail, DimReseller, DimSubcategory, FactResellerSales
+  Model 1 [FactInternetSales]: DimCustomer, DimDate, DimProduct, DimTerritory, FactInternetSales
+  Model 2 [FactResellerSales]: DimCategory, DimDate, DimEmployee, DimProductDetail, DimReseller, DimSubcategory, FactResellerSales
+```
 
 **Output:** N deployment-ready PBIP files — one per detected logical model, each independently openable in Power BI Desktop with only its subject area's tables and relationships pre-wired. Each model carries a unique `logicalId` for Fabric workspace deployment.
 
@@ -128,27 +139,30 @@ Validated against a two-model schema in SQL Server under a dedicated `poc` schem
 Full POC DDL and instructions: [`examples/poc_star_schema/`](examples/poc_star_schema/)
 
 ---
-```
+
 ## Repository Structure
+
+```
 graph_embedding/
 ├── README.md
-├── LICENSE                        MIT
-├── ROADMAP.md                     development roadmap
+├── LICENSE                            MIT
+├── ROADMAP.md                         development roadmap
 │
 ├── GraphEmbed_PBI/
-│   ├── graphembed_pbi.py          main script — SQL Server → Power BI PBIP (multi-model)
-│   ├── requirements.txt           pyodbc
-│   └── README.md                  usage, configuration, supported databases
+│   ├── graphembed_pbi.py              main script — SQL Server → Power BI PBIP (multi-model)
+│   ├── requirements.txt               pyodbc
+│   └── README.md                      usage, configuration, supported databases
 │
 ├── docs/
-│   ├── technical_paper.md         graph embedding formulation — full technical depth
-│   └── business_case.md           non-technical whitepaper — productivity and governance
+│   ├── technical_paper.md             graph embedding formulation — full technical depth
+│   └── business_case.md               non-technical whitepaper — productivity and governance
 │
 └── examples/
-└── poc_star_schema/
-├── create_schema.sql              DDL — Internet Sales (star) + Reseller Sales (snowflake)
-└── README.md                      step-by-step POC walkthrough
+    └── poc_star_schema/
+        ├── create_schema.sql          DDL — Internet Sales (star) + Reseller Sales (snowflake)
+        └── README.md                  step-by-step POC walkthrough
 ```
+
 ---
 
 ## Status
